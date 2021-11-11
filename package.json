@@ -1,7 +1,7 @@
 {
 	"name": "nacss-lazy",
 	"version": "1.0.0",
-	"description": "A Lazy Style Sheet",
+	"description": "A Lazy Loading Style Sheet",
 	"author": "Takuto Yanagida",
 	"main": "gulpfile.js",
 	"scripts": {

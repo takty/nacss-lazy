@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>nacss-lazy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.min.css?v161310t">
+<script src="js/lazy.min.js?v161310t"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const m = document.getElementsByTagName('main')[0];
+
+		const is  = Array.from(document.querySelectorAll('img'));
+		const tis = Array.from(document.querySelectorAll('table img'));
+		NACSS.lazyImage(is.filter(e => !tis.includes(e)));
+
+		const fs = Array.from(document.querySelectorAll('iframe'));
+		NACSS.lazyIframe(fs);
+	});
+</script>
+</head>
+
+<body>
+	<header role="banner">
+		<h1><a href="#top">Lazy Loading</a></h1>
+	</header>
+
+	<main>
+		<h2>Images</h2>
+
+		<div class="large-blank"></div>
+
+		<p>
+			<img src="https://picsum.photos/seed/1v161310t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 1">
+		</p>
+
+		<div class="large-blank"></div>
+
+		<p>
+			<img src="https://picsum.photos/seed/2v161310t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 2">
+		</p>
+
+		<div class="large-blank"></div>
+
+		<p>
+			<img src="https://picsum.photos/seed/3v161310t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 3">
+		</p>
+
+		<h2>Iframe</h2>
+
+		<div class="large-blank"></div>
+
+		<p>
+			<iframe src="https://www.youtube.com/embed/YE7VzlLtp-4" loading="lazy" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+		</p>
+	</main>
+
+</body>
+</html>
