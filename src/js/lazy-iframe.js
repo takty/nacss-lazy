@@ -1,6 +1,6 @@
 /**
  *
- * Lazy Loading Style (JS)
+ * Lazy Loading - Iframe
  *
  * @author Takuto Yanagida
  * @version 2021-11-11

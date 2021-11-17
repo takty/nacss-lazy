@@ -1,6 +1,6 @@
 /**
  *
- * Lazy Loading - Iframe
+ * Iframe
  *
  * @author Takuto Yanagida
  * @version 2021-11-11
