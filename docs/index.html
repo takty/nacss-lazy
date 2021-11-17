@@ -4,12 +4,10 @@
 <meta charset="utf-8">
 <title>nacss-lazy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.min.css?v161310t">
-<script src="js/lazy.min.js?v161310t"></script>
+<link rel="stylesheet" href="css/style.min.css?v145308t">
+<script src="js/lazy.min.js?v145308t"></script>
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
-		const m = document.getElementsByTagName('main')[0];
-
 		const is  = Array.from(document.querySelectorAll('img'));
 		const tis = Array.from(document.querySelectorAll('table img'));
 		NACSS.lazyImage(is.filter(e => !tis.includes(e)));
@@ -21,8 +19,9 @@
 </head>
 
 <body>
-	<header role="banner">
-		<h1><a href="#top">Lazy Loading</a></h1>
+	<header>
+		<h1>Lazy Loading</h1>
+		<nav><a href="#top">Scroll Back To Top</a></nav>
 	</header>
 
 	<main>
@@ -31,19 +30,19 @@
 		<div class="large-blank"></div>
 
 		<p>
-			<img src="https://picsum.photos/seed/1v161310t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 1">
+			<img src="https://picsum.photos/seed/1v145308t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 1">
 		</p>
 
 		<div class="large-blank"></div>
 
 		<p>
-			<img src="https://picsum.photos/seed/2v161310t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 2">
+			<img src="https://picsum.photos/seed/2v145308t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 2">
 		</p>
 
 		<div class="large-blank"></div>
 
 		<p>
-			<img src="https://picsum.photos/seed/3v161310t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 3">
+			<img src="https://picsum.photos/seed/3v145308t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 3">
 		</p>
 
 		<h2>Iframe</h2>
