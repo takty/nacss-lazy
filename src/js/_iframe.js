@@ -3,7 +3,7 @@
  * Iframe
  *
  * @author Takuto Yanagida
- * @version 2021-11-11
+ * @version 2021-11-19
  *
  */
 
@@ -46,5 +46,9 @@ function hide(t) {
 }
 
 function show(t) {
-	restoreAttribute(t, 'src');
+	const v = t.dataset['src'];
+	if (v) {
+		t.contentDocument.location.replace(v);
+		delete t.dataset['src'];
+	}
 }
