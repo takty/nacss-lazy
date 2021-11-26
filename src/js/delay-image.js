@@ -1,6 +1,6 @@
 /**
  *
- * Lazy Loading
+ * Delay Loading - Image
  *
  * @author Takuto Yanagida
  * @version 2021-11-11
@@ -15,14 +15,8 @@ window['NACSS'] = window['NACSS'] || {};
 
 	(function () {
 		// @include _image.js
-		NS.lazyImage         = initialize;
-		NS.lazyImageIsNeeded = isPolyfillNeeded;
-	})();
-
-	(function () {
-		// @include _iframe.js
-		NS.lazyIframe         = initialize;
-		NS.lazyIframeIsNeeded = isPolyfillNeeded;
+		NS.delayImage         = initialize;
+		NS.delayImageIsNeeded = isPolyfillNeeded;
 	})();
 
 	// @include _style-class.js
