@@ -3,7 +3,7 @@
  * Image
  *
  * @author Takuto Yanagida
- * @version 2021-11-11
+ * @version 2021-12-26
  *
  */
 
@@ -11,26 +11,26 @@
 const BLANK_IMG = 'data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=';
 
 
-function initialize(ts, opts = {}) {
+function apply(ts, opts = {}) {
 	if (ts.length === 0) return;
 
 	opts = Object.assign({
 		offset    : 100,
 		blankImage: BLANK_IMG,
+		doForce   : true,
 	}, opts);
 
-	if (isPolyfillNeeded(HTMLImageElement.prototype)) {  // For Safari
-		for (const t of ts) {
-			hide(t, opts['blankImage']);
+	for (const t of ts) {
+		if (t.getAttribute('loading')) {
+			t.setAttribute('loading', 'lazy');
 		}
-		onIntersect(vs => {
-			for (let i = 0; i < ts.length; i += 1) {
-				const t = ts[i];
-				if (t.dataset.src && vs[i]) {
-					show(t);
-				}
-			}
-		}, ts, 0, `* 0px ${opts['offset']}px 0px`);
+	}
+
+	if (isPolyfillNeeded(HTMLImageElement.prototype)) {  // For Safari
+		setPolyfill(ts, opts);
+	} else if (opts['doForce']) {
+		const np = ts.filter(e => !e.getAttribute('loading'));
+		setPolyfill(np, opts);
 	}
 
 	window.addEventListener('beforeprint', () => {
@@ -43,6 +43,20 @@ function initialize(ts, opts = {}) {
 			}
 		}
 	}, false);
+}
+
+function setPolyfill(ts, opts) {
+	for (const t of ts) {
+		hide(t, opts['blankImage']);
+	}
+	onIntersect(vs => {
+		for (let i = 0; i < ts.length; i += 1) {
+			const t = ts[i];
+			if (t.dataset.src && vs[i]) {
+				show(t);
+			}
+		}
+	}, ts, 0, `* 0px ${opts['offset']}px 0px`);
 }
 
 function hide(t, blankImage) {

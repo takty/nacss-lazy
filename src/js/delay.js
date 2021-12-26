@@ -3,32 +3,33 @@
  * Delay Loading
  *
  * @author Takuto Yanagida
- * @version 2021-12-07
+ * @version 2021-12-26
  *
  */
 
 
 'use strict';
 
-window['NACSS'] = window['NACSS'] || {};
+window['NACSS']          = window['NACSS']          || {};
+window['NACSS']['delay'] = window['NACSS']['delay'] || {};
 
 
-(function (NS) {
+((NS) => {
 
+	// @include __style-class.js
+	// @include __utility.js
 	{
 		// @include _image.js
-		NS.delayImage         = initialize;
-		NS.delayImageIsNeeded = isPolyfillNeeded;
-	}
+		NS.applyImage = apply;
 
+		NS.isPolyfillNeededForImage = () => isPolyfillNeeded(HTMLImageElement.prototype);
+	}
 	{
 		// @include _iframe.js
-		NS.delayIframe         = initialize;
-		NS.delayIframeIsNeeded = isPolyfillNeeded;
+		NS.applyIframe = apply;
+
+		NS.isPolyfillNeededForIframe = () => isPolyfillNeeded(HTMLIFrameElement.prototype);
 	}
-
 	// @include _common.js
-	// @include _style-class.js
-	// @include _utility.js
 
-})(window['NACSS']);
+})(window['NACSS']['delay']);

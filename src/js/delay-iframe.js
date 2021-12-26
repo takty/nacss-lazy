@@ -3,26 +3,27 @@
  * Delay Loading - Iframe
  *
  * @author Takuto Yanagida
- * @version 2021-12-07
+ * @version 2021-12-26
  *
  */
 
 
 'use strict';
 
-window['NACSS'] = window['NACSS'] || {};
+window['NACSS']          = window['NACSS']          || {};
+window['NACSS']['delay'] = window['NACSS']['delay'] || {};
 
 
-(function (NS) {
+((NS) => {
 
-	{
-		// @include _iframe.js
-		NS.delayIframe         = initialize;
-		NS.delayIframeIsNeeded = isPolyfillNeeded;
-	}
+	// @include __style-class.js
+	// @include __utility.js
+
+	// @include _iframe.js
+	NS.applyIframe = apply;
+
+	NS.isPolyfillNeededForIframe = () => isPolyfillNeeded(HTMLIFrameElement.prototype);
 
 	// @include _common.js
-	// @include _style-class.js
-	// @include _utility.js
 
-})(window['NACSS']);
+})(window['NACSS']['delay']);
