@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <title>nacss-delay</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.min.css?v231615t">
-<script src="js/delay.min.js?v231615t"></script>
+<link rel="stylesheet" href="css/style.min.css?v154003t">
+<script src="js/delay.min.js?v154003t"></script>
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
 		const is  = Array.from(document.querySelectorAll('img'));
 		const tis = Array.from(document.querySelectorAll('table img'));
-		NACSS.delayImage(is.filter(e => !tis.includes(e)));
+		NACSS.delay.applyImage(is.filter(e => !tis.includes(e)));
 
 		const fs = Array.from(document.querySelectorAll('iframe'));
-		NACSS.delayIframe(fs);
+		NACSS.delay.applyIframe(fs);
 	});
 </script>
 </head>
@@ -30,19 +30,19 @@
 		<div class="large-blank"></div>
 
 		<p>
-			<img src="https://picsum.photos/seed/1v231615t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 1">
+			<img src="https://picsum.photos/seed/1v154003t/1600/900.jpg" width="1600" height="900" alt="Sample image 1">
 		</p>
 
 		<div class="large-blank"></div>
 
 		<p>
-			<img src="https://picsum.photos/seed/2v231615t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 2">
+			<img src="https://picsum.photos/seed/2v154003t/1600/900.jpg" width="1600" height="900" alt="Sample image 2">
 		</p>
 
 		<div class="large-blank"></div>
 
 		<p>
-			<img src="https://picsum.photos/seed/3v231615t/300/200.jpg" loading="lazy" width="300" height="200" alt="Sample image 3">
+			<img src="https://picsum.photos/seed/3v154003t/1600/900.jpg" width="1600" height="900" alt="Sample image 3">
 		</p>
 
 		<h2>Iframe</h2>
@@ -50,7 +50,7 @@
 		<div class="large-blank"></div>
 
 		<p>
-			<iframe src="https://www.youtube.com/embed/YE7VzlLtp-4" loading="lazy" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+			<iframe src="https://www.youtube.com/embed/YE7VzlLtp-4" width="1600" height="900" frameborder="0" allowfullscreen></iframe>
 		</p>
 	</main>
 
